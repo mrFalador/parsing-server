@@ -34,9 +34,11 @@ var QuotesSchema = new Schema(
                 "marketCap":{
                     "type":"integer"
                 },
-            }
+            },
             "type":"object"
-        }
+        },
         "type":"array"
-        }
+    }
 )
+
+module.exports = mongoose.model('Quotes', NewsSchema);

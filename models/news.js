@@ -39,4 +39,4 @@ var NewsSchema = new Schema(
     }
 )
 
-module.exports = mongoose.model('Quotes', NewsSchema);
+module.exports = mongoose.model('News', NewsSchema);
