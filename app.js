@@ -7,14 +7,13 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://first_user:qwerty2121@cluster0.f5oet.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-mongoose.connect(mongoDB);
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 var app = express();
+
+//sequelize
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD,{
+  dialect: 'postgress'
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
