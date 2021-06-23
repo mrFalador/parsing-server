@@ -1,42 +1,34 @@
-var mongoose = require('mongoose');
+const Sequelize = require('sequelize');
 
-var Schema = mongoose.Schema;
-
-var NewsSchema = new Schema(
-    {
-        "properties":{
-            "item":{
-                "items":{
-                    "properties":{
-                        "description":{
-                            "type":"string"
-                        },
-                        "guid":{
-                            "type":"string"
-                        },
-                        "link":{
-                            "type":"string"
-                        },
-                        "pubDate":{
-                            "type":"string"
-                        },
-                        "title":{
-                            "type":"string"
-                        }
-                    },
-                    "type":"object"
-                },
-                "type":"array"
-            },
-            "language":{
-            "type":"string"
-            },
-            "lastBuildDate":{
-            "type":"string"
-            }
-        },
-        "type":"object"
+module.exports = function(sequelize, DataTypes){
+    return sequelize.define('News', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false
+    },
+    description: {
+        type: Sequelize.STRING,
+        allowNull:true
+    },
+    guid:{
+        type: Sequelize.STRING,
+        allowNull:true
+    },
+    link:{
+        type: Sequelize.STRING,
+        allowNull:true        
+    },
+    pubDate:{
+        type: Sequelize.STRING,
+        allowNull:true       
+    },
+    title:{
+        type: Sequelize.STRING,
+        allowNull:true
     }
-)
+})
+};
 
-module.exports = mongoose.model('News', NewsSchema);
+

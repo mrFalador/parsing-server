@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -12,8 +14,16 @@ var app = express();
 //sequelize
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD,{
-  dialect: 'postgress'
+  dialect: 'postgres'
 });
+
+var newsModel = require('./models/news.js');
+
+sequelize.sync().then(result=>{
+  console.log(result);
+})
+.catch(err=>console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

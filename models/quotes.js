@@ -1,44 +1,43 @@
+const Sequelize = require('sequelize');
 
-var mongoose = require('mongoose');
-
-var Schema = mongoose.Schema;
-
-var QuotesSchema = new Schema(
-    {
-        "items":{
-            "properties":{
-                "ask":{
-                    "type":"integer"
+module.exports = function(sequelize, DataTypes){
+    return sequelize.define('Quotes',{
+                ask:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                 },
-                "askSize":{
-                    "type":"integer"
+                askSize:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                 },
-                "bid":{
-                    "type":"integer"
+                bid:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                     },
-                "bidSize":{
-                    "type":"integer"
+                bidSize:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                 },
-                "bookValue":{
-                    "type":"number"
+                bookValue:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                 },
-                "language":{
-                    "type":"string"
+                language:{
+                    type: Sequelize.STRING,
+                    allowNull:true
                 },
-                "longName":{
-                    "type":"string"
+                longName:{
+                    type: Sequelize.STRING,
+                    allowNull:true
                 },
-                "market":{
-                    "type":"string"
+                market:{
+                    type: Sequelize.STRING,
+                    allowNull:true
                 },
-                "marketCap":{
-                    "type":"integer"
+                marketCap:{
+                    type: Sequelize.INTEGER,
+                    allowNull:true
                 },
-            },
-            "type":"object"
-        },
-        "type":"array"
-    }
-)
+ })
+}
 
-module.exports = mongoose.model('Quotes', NewsSchema);
