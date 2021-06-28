@@ -7,8 +7,7 @@ req.headers({
       "x-rapidapi-host": "yahoo-finance15.p.rapidapi.com",
       "useQueryString": true
   });
-  
-  
+    
 req.end(function (res) {
      return(res.body);
   });

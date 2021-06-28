@@ -23,7 +23,6 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 var newsModel = require('./models/news.js');
 var quotesModel = require('./models/quotes.js');
 
-
 sequelize.sync().then(result=>{
   console.log('IT Work!!!');
 })
