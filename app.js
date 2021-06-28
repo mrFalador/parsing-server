@@ -12,17 +12,20 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var News_data = require('./sources/utils/news');
+var Quotes = require('./sources/utils/quotes');
+
 //sequelize
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD,{
   dialect: 'postgres'
 });
-
 var newsModel = require('./models/news.js');
 var quotesModel = require('./models/quotes.js');
 
+
 sequelize.sync().then(result=>{
-  console.log(result);
+  console.log('IT Work!!!');
 })
 .catch(err=>console.log(err));
 
@@ -57,3 +60,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
