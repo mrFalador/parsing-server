@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
@@ -18,6 +19,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 var newsModel = require('./models/news.js');
+var quotesModel = require('./models/quotes.js');
 
 sequelize.sync().then(result=>{
   console.log(result);

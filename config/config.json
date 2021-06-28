@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "my_user",
+    "password": "root",
+    "database": "parse_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "my_user",
+    "password": "root",
+    "database": "parse_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "my_user",
+    "password": "root",
+    "database": "parse_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
